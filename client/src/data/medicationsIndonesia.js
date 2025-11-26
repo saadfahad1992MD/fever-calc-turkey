@@ -1,7 +1,7 @@
 // Indonesia Pediatric Medications Database
 // Paracetamol and Ibuprofen medications commonly available in Indonesia
 
-// Placeholder images - will use generic medication images
+// Real Indonesian medication images
 const placeholderImg = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="200" height="200"%3E%3Crect fill="%23ddd" width="200" height="200"/%3E%3Ctext x="50%25" y="50%25" text-anchor="middle" dy=".3em" fill="%23999"%3EMedication%3C/text%3E%3C/svg%3E'
 
 export const medicationsIndonesia = {
@@ -13,7 +13,7 @@ export const medicationsIndonesia = {
       concentration: 100, // mg per ml
       volume: 1, // ml
       form: 'drops',
-      image: placeholderImg,
+      image: '/medications/indonesia/tempra_drops.jpg',
       ageRestriction: 'For infants 0-12 months'
     },
     {
@@ -23,7 +23,7 @@ export const medicationsIndonesia = {
       concentration: 120, // mg per 5ml
       volume: 5, // ml
       form: 'syrup',
-      image: placeholderImg,
+      image: '/medications/indonesia/sanmol_sirup.jpg',
       ageRestriction: ''
     },
     {
@@ -33,7 +33,7 @@ export const medicationsIndonesia = {
       concentration: 120, // mg per 5ml
       volume: 5, // ml
       form: 'syrup',
-      image: placeholderImg,
+      image: '/medications/indonesia/panadol_anak.jpg',
       ageRestriction: ''
     },
     {
@@ -43,7 +43,7 @@ export const medicationsIndonesia = {
       concentration: 120, // mg per 5ml
       volume: 5, // ml
       form: 'syrup',
-      image: placeholderImg,
+      image: '/medications/indonesia/tempra_forte.png',
       ageRestriction: ''
     },
     {
@@ -53,7 +53,7 @@ export const medicationsIndonesia = {
       concentration: 120, // mg per 5ml
       volume: 5, // ml
       form: 'syrup',
-      image: placeholderImg,
+      image: '/medications/indonesia/biogesic_anak.png',
       ageRestriction: ''
     },
     {
@@ -63,7 +63,7 @@ export const medicationsIndonesia = {
       concentration: 120, // mg per 5ml
       volume: 5, // ml
       form: 'syrup',
-      image: placeholderImg,
+      image: '/medications/indonesia/termorex_sirup.jpg',
       ageRestriction: ''
     }
   ],
@@ -75,7 +75,7 @@ export const medicationsIndonesia = {
       concentration: 100, // mg per 5ml
       volume: 5, // ml
       form: 'syrup',
-      image: placeholderImg,
+      image: '/medications/indonesia/proris_suspensi.jpg',
       ageRestriction: 'For children 6 months and above'
     },
     {
@@ -85,7 +85,7 @@ export const medicationsIndonesia = {
       concentration: 200, // mg per 5ml
       volume: 5, // ml
       form: 'syrup',
-      image: placeholderImg,
+      image: '/medications/indonesia/proris_forte.jpg',
       ageRestriction: 'For older children'
     },
     {
@@ -95,7 +95,7 @@ export const medicationsIndonesia = {
       concentration: 100, // mg per 5ml
       volume: 5, // ml
       form: 'syrup',
-      image: placeholderImg,
+      image: '/medications/indonesia/hufagripp_tmp.jpg',
       ageRestriction: 'For children 6 months and above'
     }
   ],
