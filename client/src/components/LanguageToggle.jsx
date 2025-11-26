@@ -13,8 +13,8 @@ export function LanguageToggle({ currentLanguage, onToggle, targetLanguage }) {
     // Currently Hindi -> show English option
     flag = '🇬🇧';
     text = 'English';
-  } else if (currentLanguage === 'tl') {
-    // Currently Tagalog -> show English option
+  } else if (currentLanguage === 'id') {
+    // Currently Indonesian -> show English option
     flag = '🇬🇧';
     text = 'English';
   } else if (currentLanguage === 'en') {
@@ -28,9 +28,9 @@ export function LanguageToggle({ currentLanguage, onToggle, targetLanguage }) {
     } else if (target === 'hi') {
       flag = '🇮🇳';
       text = 'हिंदी';
-    } else if (target === 'tl') {
-      flag = '🇵🇭';
-      text = 'Tagalog';
+    } else if (target === 'id') {
+      flag = '🇮🇩';
+      text = 'Indonesian';
     } else {
       // Fallback to Arabic if target is unknown
       flag = '🇸🇦';

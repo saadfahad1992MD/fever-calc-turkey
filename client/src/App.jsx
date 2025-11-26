@@ -8,40 +8,14 @@ import { Alert, AlertDescription } from '@/components/ui/alert.jsx'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs.jsx'
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog.jsx'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion.jsx'
-import { AlertTriangle, Kalkulator, Info, X, ZoomIn, Pill, Flame, Shield, Clock, Users, CheckCircle, Linkedin } from 'lucide-react'
+import { AlertTriangle, Calculator, Info, X, ZoomIn, Pill, Flame, Shield, Clock, Users, CheckCircle, Linkedin } from 'lucide-react'
 import { LanguageToggle } from './components/LanguageToggle.jsx'
-import { BagikanModalEnglish } from './components/BagikanModalEnglish.jsx'
+import { ShareModalEnglish } from './components/ShareModalEnglish.jsx'
 import linkedinLogo from './assets/linkedin-logo.png'
-import { obatsIndonesia } from './data/obatsIndonesia.js'
+import { medicationsIndonesia } from './data/medicationsIndonesia.js'
 import './App.css'
 
-// Import obat images
-import adolSirupImg from './assets/obats/adol_syrup.webp'
-import adolDropsImg from './assets/obats/adol_drops_new_updated.webp'
-import fevadolImg from './assets/obats/fevadol_new.jpg'
-import panadolImg from './assets/obats/panadol_anak-anak_5_12.webp'
-import panadolMotherChildImg from './assets/obats/panadol_baby_bayi.jpeg'
-import panadolBabySuspensionImg from './assets/obats/panadol_baby_suspension.webp'
-import defadolImg from './assets/obats/defadol.jpg'
-import nurofenImg from './assets/obats/nurofen.webp'
-import brufenImg from './assets/obats/brufen.webp'
-import profinalImg from './assets/obats/profinal.webp'
-import brufen2Img from './assets/obats/brufen2.webp'
-import sapofenImg from './assets/obats/sapofen.webp'
-
-// Import suppository images
-import fevadol100SuppImg from './assets/suppositories/fevadol_100.webp'
-import fevadol200SuppImg from './assets/suppositories/fevadol_200.jpg'
-import fevadol350SuppImg from './assets/suppositories/fevadol_350.jpg'
-import adol125SuppImg from './assets/suppositories/adol_125.jpg'
-import adol250SuppImg from './assets/suppositories/adol_250.webp'
-import tylenol100SuppImg from './assets/suppositories/tylenol_100.jpg'
-import tylenol200SuppImg from './assets/suppositories/tylenol_200.webp'
-import tylenol350SuppImg from './assets/suppositories/tylenol_350.jpg'
-import rofenac12_5SuppImg from './assets/suppositories/rofenac_12_5.png'
-import rofenac25SuppImg from './assets/suppositories/rofenac_25.webp'
-import voltaren12_5SuppImg from './assets/suppositories/voltaren_12_5.jpg'
-import voltaren25SuppImg from './assets/suppositories/voltaren_25.webp'
+// Indonesia obats use placeholder images defined in medicationsIndonesia.js
 
 // Saudi obats - replaced with Indian obats
 /*
@@ -127,7 +101,7 @@ const obats = {
       volume: 5, // ml
       form: 'Sirup',
       image: nurofenImg,
-      ageRestriction: 'Age over 6 bulan'
+      ageRestriction: 'Umur di atas 6 bulan'
     },
     {
       id: 'prof',
@@ -137,7 +111,7 @@ const obats = {
       volume: 5, // ml
       form: 'Sirup',
       image: brufenImg,
-      ageRestriction: 'Age over 6 bulan'
+      ageRestriction: 'Umur di atas 6 bulan'
     },
     {
       id: 'profinal',
@@ -147,7 +121,7 @@ const obats = {
       volume: 5, // ml
       form: 'Sirup',
       image: profinalImg,
-      ageRestriction: 'Age over 6 bulan'
+      ageRestriction: 'Umur di atas 6 bulan'
     },
     {
       id: 'brufen2',
@@ -157,7 +131,7 @@ const obats = {
       volume: 5, // ml
       form: 'Sirup',
       image: brufen2Img,
-      ageRestriction: 'Age over 6 bulan'
+      ageRestriction: 'Umur di atas 6 bulan'
     },
     {
       id: 'sapofen',
@@ -167,7 +141,7 @@ const obats = {
       volume: 5, // ml
       form: 'Sirup',
       image: sapofenImg,
-      ageRestriction: 'Age over 6 bulan'
+      ageRestriction: 'Umur di atas 6 bulan'
     }
   ]
 }
@@ -309,10 +283,10 @@ const suppositories = {
 */
 
 // Use Indonesia obats database (English)
-const obats = { paracetamol: obatsIndonesia.paracetamol, ibuprofen: obatsIndonesia.ibuprofen };
-const suppositories = obatsIndonesia.suppositories;
+const obats = { paracetamol: medicationsIndonesia.paracetamol, ibuprofen: medicationsIndonesia.ibuprofen };
+const suppositories = medicationsIndonesia.suppositories;
 
-function AppEnglish({ onChangeLanguage }) {
+function App({ onChangeLanguage }) {
   const [weight, setWeight] = useState('') // String for text input
   const [age, setAge] = useState('') // String for text input
   const [ageUnit, setAgeUnit] = useState('') // 'bulan' or 'tahun' - empty by default
@@ -750,7 +724,7 @@ function AppEnglish({ onChangeLanguage }) {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
-      <LanguageToggle currentLanguage="en" targetLanguage="tl" onToggle={onChangeLanguage} />
+      <LanguageToggle currentLanguage="en" targetLanguage="id" onToggle={onChangeLanguage} />
       {/* Top Brand Header */}
       <div className="sticky top-0 bg-white text-gray-800 pt-12 pb-6 sm:pt-6 shadow-lg border-b-2 border-gray-100 z-40">
         <div className="max-w-4xl mx-auto px-4 relative">
@@ -788,11 +762,11 @@ function AppEnglish({ onChangeLanguage }) {
           <div className="text-center">
             <div className="flex items-center justify-center gap-2 mb-2">
               <h1 className="text-2xl font-bold text-gray-900">
-                Demam Reducer & Nyeri Reliever Dosage Kalkulator for Children
+                Kalkulator Dosis Penurun Demam & Pereda Nyeri untuk Anak
               </h1>
             </div>
             <p className="text-gray-600 mb-3">
-              Calculate the correct dosis for your anak based on weight and obat type
+              Hitung dosis yang tepat untuk anak Anda berdasarkan berat badan dan jenis obat
             </p>
           </div>
         </div>
@@ -805,7 +779,7 @@ function AppEnglish({ onChangeLanguage }) {
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
           <TabsList className="grid w-full grid-cols-2 mb-6">
             <TabsTrigger value="calculator" className="flex items-center gap-2">
-              <Kalkulator className="w-4 h-4" />
+              <Calculator className="w-4 h-4" />
               Kalkulator
             </TabsTrigger>
             <TabsTrigger value="info" className="flex items-center gap-2">
@@ -819,7 +793,7 @@ function AppEnglish({ onChangeLanguage }) {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <Kalkulator className="w-5 h-5" />
+                  <Calculator className="w-5 h-5" />
                   Informasi Anak
                 </CardTitle>
                 <CardDescription>
@@ -951,7 +925,7 @@ function AppEnglish({ onChangeLanguage }) {
             {/* Obat Selection */}
             <div className="space-y-6">
               <div className="space-y-4">
-                <h2 className="text-xl font-semibold">Select obat form:</h2>
+                <h2 className="text-xl font-semibold">Pilih bentuk obat:</h2>
                 
                 {/* Obat Type Selection */}
                 <div className="flex gap-4 justify-center">
@@ -997,7 +971,7 @@ function AppEnglish({ onChangeLanguage }) {
                       <div className="w-4 h-4 bg-green-500 rounded-full"></div>
                       <h3 className="text-lg font-semibold text-green-700">Obat Ibuprofen</h3>
                       <Badge variant="outline" className="text-green-600">
-                        Age over 6 bulan
+                        Umur di atas 6 bulan
                       </Badge>
                     </div>
                     
@@ -1201,7 +1175,7 @@ function AppEnglish({ onChangeLanguage }) {
                   )
                 ) : (
                   <p className="text-gray-500 text-center py-8">
-                    Masukkan umur dan berat badan anak and select obat to calculate dosis
+                    Masukkan umur dan berat badan anak dan pilih obat untuk menghitung dosis
                   </p>
                 )}
               </CardContent>
@@ -1753,7 +1727,7 @@ function AppEnglish({ onChangeLanguage }) {
       </footer>
       
       {/* Bagikan Modal */}
-      <BagikanModalEnglish isOpen={isBagikanModalOpen} onClose={() => setIsBagikanModalOpen(false)} />
+      <ShareModalEnglish isOpen={isBagikanModalOpen} onClose={() => setIsBagikanModalOpen(false)} />
     </div>
   )
 }
@@ -1929,5 +1903,5 @@ const DosageTimelineVisualizer = ({
   )
 }
 
-export default AppEnglish
+export default App
 

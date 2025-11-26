@@ -15,33 +15,7 @@ import linkedinLogo from './assets/linkedin-logo.png'
 import { medicationsIndonesia } from './data/medicationsIndonesia.js'
 import './App.css'
 
-// Import medication images
-import adolSirupImg from './assets/medications/adol_syrup.webp'
-import adolDropsImg from './assets/medications/adol_drops_new_updated.webp'
-import fevadolImg from './assets/medications/fevadol_new.jpg'
-import panadolImg from './assets/medications/panadol_children_5_12.webp'
-import panadolMotherChildImg from './assets/medications/panadol_baby_infant.jpeg'
-import panadolBabySuspensionImg from './assets/medications/panadol_baby_suspension.webp'
-import defadolImg from './assets/medications/defadol.jpg'
-import nurofenImg from './assets/medications/nurofen.webp'
-import brufenImg from './assets/medications/brufen.webp'
-import profinalImg from './assets/medications/profinal.webp'
-import brufen2Img from './assets/medications/brufen2.webp'
-import sapofenImg from './assets/medications/sapofen.webp'
-
-// Import suppository images
-import fevadol100SuppImg from './assets/suppositories/fevadol_100.webp'
-import fevadol200SuppImg from './assets/suppositories/fevadol_200.jpg'
-import fevadol350SuppImg from './assets/suppositories/fevadol_350.jpg'
-import adol125SuppImg from './assets/suppositories/adol_125.jpg'
-import adol250SuppImg from './assets/suppositories/adol_250.webp'
-import tylenol100SuppImg from './assets/suppositories/tylenol_100.jpg'
-import tylenol200SuppImg from './assets/suppositories/tylenol_200.webp'
-import tylenol350SuppImg from './assets/suppositories/tylenol_350.jpg'
-import rofenac12_5SuppImg from './assets/suppositories/rofenac_12_5.png'
-import rofenac25SuppImg from './assets/suppositories/rofenac_25.webp'
-import voltaren12_5SuppImg from './assets/suppositories/voltaren_12_5.jpg'
-import voltaren25SuppImg from './assets/suppositories/voltaren_25.webp'
+// Indonesia medications use placeholder images defined in medicationsIndonesia.js
 
 // Saudi medications - replaced with Indian medications
 /*
@@ -59,12 +33,12 @@ const medications = {
     },
     {
       id: 'adol_syrup',
-      name: 'Adol Sirup',
+      name: 'Adol Syrup',
       ingredient: 'Paracetamol',
       concentration: 120, // mg per 5ml
       volume: 5, // ml
-      form: 'Sirup',
-      image: adolSirupImg,
+      form: 'Syrup',
+      image: adolSyrupImg,
       ageRestriction: ''
     },
     {
@@ -73,7 +47,7 @@ const medications = {
       ingredient: 'Paracetamol',
       concentration: 160, // mg per 5ml
       volume: 5, // ml
-      form: 'Sirup',
+      form: 'Syrup',
       image: fevadolImg,
       ageRestriction: ''
     },
@@ -83,7 +57,7 @@ const medications = {
       ingredient: 'Paracetamol',
       concentration: 120, // mg per 5ml
       volume: 5, // ml
-      form: 'Sirup',
+      form: 'Syrup',
       image: panadolMotherChildImg,
       ageRestriction: ''
     },
@@ -93,7 +67,7 @@ const medications = {
       ingredient: 'Paracetamol',
       concentration: 120, // mg per 5ml
       volume: 5, // ml
-      form: 'Sirup',
+      form: 'Syrup',
       image: panadolBabySuspensionImg,
       ageRestriction: ''
     },
@@ -103,7 +77,7 @@ const medications = {
       ingredient: 'Paracetamol',
       concentration: 160, // mg per 5ml
       volume: 5, // ml
-      form: 'Sirup',
+      form: 'Syrup',
       image: defadolImg,
       ageRestriction: ''
     },
@@ -113,7 +87,7 @@ const medications = {
       ingredient: 'Paracetamol',
       concentration: 240, // mg per 5ml (Children's 5-12 years)
       volume: 5, // ml
-      form: 'Sirup',
+      form: 'Syrup',
       image: panadolImg,
       ageRestriction: 'Suitable from 5 years old'
     }
@@ -125,7 +99,7 @@ const medications = {
       ingredient: 'Ibuprofen',
       concentration: 100, // mg per 5ml
       volume: 5, // ml
-      form: 'Sirup',
+      form: 'Syrup',
       image: nurofenImg,
       ageRestriction: 'Age over 6 months'
     },
@@ -135,7 +109,7 @@ const medications = {
       ingredient: 'Ibuprofen',
       concentration: 100, // mg per 5ml
       volume: 5, // ml
-      form: 'Sirup',
+      form: 'Syrup',
       image: brufenImg,
       ageRestriction: 'Age over 6 months'
     },
@@ -145,7 +119,7 @@ const medications = {
       ingredient: 'Ibuprofen',
       concentration: 100, // mg per 5ml
       volume: 5, // ml
-      form: 'Sirup',
+      form: 'Syrup',
       image: profinalImg,
       ageRestriction: 'Age over 6 months'
     },
@@ -155,7 +129,7 @@ const medications = {
       ingredient: 'Ibuprofen',
       concentration: 100, // mg per 5ml
       volume: 5, // ml
-      form: 'Sirup',
+      form: 'Syrup',
       image: brufen2Img,
       ageRestriction: 'Age over 6 months'
     },
@@ -165,7 +139,7 @@ const medications = {
       ingredient: 'Ibuprofen',
       concentration: 100, // mg per 5ml
       volume: 5, // ml
-      form: 'Sirup',
+      form: 'Syrup',
       image: sapofenImg,
       ageRestriction: 'Age over 6 months'
     }
@@ -409,7 +383,7 @@ function AppEnglish({ onChangeLanguage }) {
           suppositories: 1,
           frequency,
           maxDailyDoses,
-          isSupositoria: true
+          isSuppository: true
         })
         return
       }
@@ -431,7 +405,7 @@ function AppEnglish({ onChangeLanguage }) {
         suppositories: 1,
         frequency,
         maxDailyDoses,
-        isSupositoria: true
+        isSuppository: true
       })
     } else {
       // For syrups, calculate volume needed
@@ -451,7 +425,7 @@ function AppEnglish({ onChangeLanguage }) {
         volume: volumeNeeded,
         frequency,
         maxDailyDoses,
-        isSupositoria: false
+        isSuppository: false
       })
     }
   }
@@ -529,7 +503,7 @@ function AppEnglish({ onChangeLanguage }) {
     const is2YearsOrAbove = age && ageUnit === 'years' && parseFloat(age) >= 2
     
     // Check if suppository is suitable for current age/weight
-    let isSupositoriaUnsuitable = false
+    let isSuppositoryUnsuitable = false
     let unsuitabilityReason = ''
     
     if (medication.form === 'suppository' && age && ageUnit && weight) {
@@ -543,7 +517,7 @@ function AppEnglish({ onChangeLanguage }) {
             const minWeight = parseFloat(weightMatch[1])
             const maxWeight = parseFloat(weightMatch[2])
             if (weightNum < minWeight || weightNum > maxWeight) {
-              isSupositoriaUnsuitable = true
+              isSuppositoryUnsuitable = true
               unsuitabilityReason = `Suitable for weight ${weightRange} kg`
             }
           }
@@ -552,23 +526,23 @@ function AppEnglish({ onChangeLanguage }) {
       
       if (medication.ingredient === 'Diclofenac') {
         if (ageInMonths < 12) {
-          isSupositoriaUnsuitable = true
+          isSuppositoryUnsuitable = true
           unsuitabilityReason = 'Suitable for children over 1 year old'
         } else {
           if (weightNum >= 8 && weightNum <= 16) {
             if (medication.concentration !== 12.5) {
-              isSupositoriaUnsuitable = true
+              isSuppositoryUnsuitable = true
               // Show the range for THIS medication (25mg), not the unsuitable one
               unsuitabilityReason = 'Suitable for weight 17-25 kg'
             }
           } else if (weightNum >= 17 && weightNum <= 25) {
             if (medication.concentration !== 25) {
-              isSupositoriaUnsuitable = true
+              isSuppositoryUnsuitable = true
               // Show the range for THIS medication (12.5mg), not the unsuitable one
               unsuitabilityReason = 'Suitable for weight 8-16 kg'
             }
           } else {
-            isSupositoriaUnsuitable = true
+            isSuppositoryUnsuitable = true
             // Show specific range based on concentration
             if (medication.concentration === 12.5) {
               unsuitabilityReason = 'Suitable for weight 8-16 kg'
@@ -582,7 +556,7 @@ function AppEnglish({ onChangeLanguage }) {
       }
     }
     
-    const isDisabled = (isIbuprofen && isUnder6Months) || isSupositoriaUnsuitable || (isAdolDrops && is2YearsOrAbove)
+    const isDisabled = (isIbuprofen && isUnder6Months) || isSuppositoryUnsuitable || (isAdolDrops && is2YearsOrAbove)
 
     const handleClick = () => {
       // Check if age and weight are entered
@@ -591,7 +565,7 @@ function AppEnglish({ onChangeLanguage }) {
         return
       }
       
-      if (isSupositoriaUnsuitable) {
+      if (isSuppositoryUnsuitable) {
         alert(`⚠️ Warning: This suppository is not suitable for your child\n${unsuitabilityReason}`)
         return
       }
@@ -680,7 +654,7 @@ function AppEnglish({ onChangeLanguage }) {
                 ⚠️ For children under 2 years
               </p>
             )}
-            {isSupositoriaUnsuitable && (
+            {isSuppositoryUnsuitable && (
               <p className="text-xs text-red-600 font-bold mt-1 bg-red-50 px-2 py-1 rounded">
                 ⚠️ {unsuitabilityReason}
               </p>
@@ -750,7 +724,7 @@ function AppEnglish({ onChangeLanguage }) {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
-      <LanguageToggle currentLanguage="en" targetLanguage="tl" onToggle={onChangeLanguage} />
+      <LanguageToggle currentLanguage="en" targetLanguage="id" onToggle={onChangeLanguage} />
       {/* Top Brand Header */}
       <div className="sticky top-0 bg-white text-gray-800 pt-12 pb-6 sm:pt-6 shadow-lg border-b-2 border-gray-100 z-40">
         <div className="max-w-4xl mx-auto px-4 relative">
@@ -961,7 +935,7 @@ function AppEnglish({ onChangeLanguage }) {
                     className="flex items-center gap-2 px-6 py-3"
                   >
                     <span>💧</span>
-                    <span>Sirup</span>
+                    <span>Syrup</span>
                   </Button>
                   {/* Suppositories not available in Indonesia */}
                 </div>
@@ -1115,7 +1089,7 @@ function AppEnglish({ onChangeLanguage }) {
                       <div className="bg-green-50 border border-green-200 rounded-lg p-4">
                         <h3 className="font-semibold text-green-800 mb-2">Calculated Dose:</h3>
                         <div className="grid gap-2 text-sm">
-                          {result.isSupositoria ? (
+                          {result.isSuppository ? (
                             <p className="text-lg font-bold text-green-700">
                               <strong>Number of Suppositories:</strong> {result.suppositories} suppository
                             </p>
@@ -1290,7 +1264,7 @@ function AppEnglish({ onChangeLanguage }) {
                                 Popular Brand Names
                               </h4>
                               <div className="text-purple-800 text-sm mb-3">
-                                Available forms: <strong>Sirup</strong>
+                                Available forms: <strong>Syrup</strong>
                               </div>
                               <div className="grid gap-2 text-purple-800 text-sm">
                                 <div>• Nurofen - Nurofen</div>
@@ -1356,7 +1330,7 @@ function AppEnglish({ onChangeLanguage }) {
                                 </div>
                                 <div className="flex justify-between border-b border-gray-200 pb-1">
                                   <span className="font-medium text-gray-700">Available Forms:</span>
-                                  <span className="text-blue-700">Drops, Sirup, suppositories</span>
+                                  <span className="text-blue-700">Drops, Syrup, suppositories</span>
                                 </div>
                                 <div className="flex justify-between">
                                   <span className="font-medium text-gray-700">Important Warning:</span>
@@ -1384,7 +1358,7 @@ function AppEnglish({ onChangeLanguage }) {
                                 </div>
                                 <div className="flex justify-between border-b border-gray-200 pb-1">
                                   <span className="font-medium text-gray-700">Available Forms:</span>
-                                  <span className="text-red-700">Mainly Sirup</span>
+                                  <span className="text-red-700">Mainly Syrup</span>
                                 </div>
                                 <div className="flex justify-between">
                                   <span className="font-medium text-gray-700">Important Warning:</span>
@@ -1460,8 +1434,8 @@ function AppEnglish({ onChangeLanguage }) {
                                 </tr>
                                 <tr className="bg-gray-25">
                                   <td className="p-3 font-medium whitespace-nowrap">Available Forms</td>
-                                  <td className="p-3 text-center text-blue-700">Drops, Sirup, suppositories</td>
-                                  <td className="p-3 text-center text-red-700 whitespace-nowrap">Mainly Sirup</td>
+                                  <td className="p-3 text-center text-blue-700">Drops, Syrup, suppositories</td>
+                                  <td className="p-3 text-center text-red-700 whitespace-nowrap">Mainly Syrup</td>
                                   <td className="p-3 text-center text-red-700 whitespace-nowrap">Suppositories only</td>
                                 </tr>
                                 <tr>
