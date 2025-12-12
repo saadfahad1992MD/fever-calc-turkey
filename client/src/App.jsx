@@ -12,10 +12,9 @@ import { AlertTriangle, Calculator, Info, X, ZoomIn, Pill, Flame, Shield, Clock,
 import { LanguageToggle } from './components/LanguageToggle.jsx'
 import { ShareModalEnglish } from './components/ShareModalEnglish.jsx'
 import linkedinLogo from './assets/linkedin-logo.png'
-import { medicationsIndonesia } from './data/medicationsIndonesia.js'
 import './App.css'
 
-// Indonesia obats use placeholder images defined in medicationsIndonesia.js
+// Turkey medications - App.jsx is not used in Turkey version, Home.tsx is the main component
 
 // Saudi obats - replaced with Indian obats
 /*
@@ -282,9 +281,11 @@ const suppositories = {
 
 */
 
-// Use Indonesia obats database (English)
-const obats = { paracetamol: medicationsIndonesia.paracetamol, ibuprofen: medicationsIndonesia.ibuprofen };
-const suppositories = medicationsIndonesia.suppositories;
+// Use Indonesia obats database (English) - NOT USED IN TURKEY VERSION
+// const obats = { paracetamol: medicationsIndonesia.paracetamol, ibuprofen: medicationsIndonesia.ibuprofen };
+// const suppositories = medicationsIndonesia.suppositories;
+const obats = { paracetamol: [], ibuprofen: [] };
+const suppositories = { paracetamol: [], ibuprofen: [] };
 
 function App({ onChangeLanguage }) {
   const [weight, setWeight] = useState('') // String for text input
