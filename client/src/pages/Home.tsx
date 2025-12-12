@@ -7,14 +7,14 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Calculator, Info, Languages, Baby, Weight, Pill, AlertTriangle, Share2 } from "lucide-react";
-import { medicationsIndonesia, calculateParacetamolDose, calculateIbuprofenDose, calculateVolume, type Medication } from "@/data/medicationsIndonesia";
-import { indonesianTranslations } from "@/translations/indonesian";
-import { englishTranslations } from "@/translations/english";
+import { medicationsTurkey, calculateParacetamolDose, calculateIbuprofenDose, calculateVolume, type Medication } from "@/data/medicationsTurkey";
+import { turkishTranslations } from "@/translations/turkish";
+import { englishSimpleTranslations } from "@/translations/englishSimple";
 
-type Language = 'id' | 'en';
+type Language = 'tr' | 'en';
 
 export default function Home() {
-  const [language, setLanguage] = useState<Language>('id');
+  const [language, setLanguage] = useState<Language>('tr');
   const [ageGroup, setAgeGroup] = useState<'infant' | 'child' | null>(null);
   const [ageMonths, setAgeMonths] = useState<string>('');
   const [ageYears, setAgeYears] = useState<string>('');
@@ -23,10 +23,10 @@ export default function Home() {
   const [selectedMedication, setSelectedMedication] = useState<Medication | null>(null);
   const [results, setResults] = useState<any>(null);
 
-  const t = language === 'id' ? indonesianTranslations : englishTranslations;
+  const t = language === 'tr' ? turkishTranslations : englishSimpleTranslations;
 
   const toggleLanguage = () => {
-    setLanguage(prev => prev === 'id' ? 'en' : 'id');
+    setLanguage(prev => prev === 'tr' ? 'en' : 'tr');
   };
 
   const handleCalculate = () => {
@@ -75,11 +75,11 @@ export default function Home() {
     }
   };
 
-  const filteredParacetamol = medicationsIndonesia.paracetamol.filter(
+  const filteredParacetamol = medicationsTurkey.paracetamol.filter(
     med => med.form === medicationForm
   );
 
-  const filteredIbuprofen = medicationsIndonesia.ibuprofen.filter(
+  const filteredIbuprofen = medicationsTurkey.ibuprofen.filter(
     med => med.form === medicationForm
   );
 
@@ -105,7 +105,7 @@ export default function Home() {
               className="gap-2"
             >
               <Languages className="w-4 h-4" />
-              {language === 'id' ? '🇮🇩' : '🇬🇧'} {language === 'id' ? t.english : t.indonesian}
+              {t.languageButton}
             </Button>
           </div>
         </div>
